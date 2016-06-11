@@ -37,7 +37,6 @@ $subsubsectionfont: $sectionfont
     weight: $weight
     size:   $size
   text-align: left
-  line-height: $size
   position: relative
 
 h1
@@ -53,15 +52,9 @@ h1
 
 h2
   @include sectionstyle(1.5em, 700, $sectionfont)
-  /*font:
-     family: $sectionfont
-     weigth: 700
-     size: 1.5em     */
   color: $ctext
-  text-align: left
-  line-height: 1.5em
-  position: relative
   overflow: hidden
+  margin-bottom: -0.3em
   &:after
     content: ""
     display: inline-block
@@ -73,12 +66,10 @@ h2
       left:  10px
     border:
       top: 2px solid $ctext
-
 h3 
-  font:
-     family: $sectionfont
-     weigth: 700
-     size: 1.3em 
-  text-align: left
-  line-height: 1.3em  
-      
+  @include sectionstyle(1.2em, 700, $subsectionfont)
+  margin-bottom: -0.5em
+h4 
+  @include sectionstyle(1.2em, 600, $subsectionfont)
+  margin-bottom: -0.5em
+  font-variant: small-caps
