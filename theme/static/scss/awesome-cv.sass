@@ -41,6 +41,11 @@ $bodyfont: $sectionfont
   text-align: left
   position: relative
 
+body
+  margin:
+    left: 5%
+    right: 5%
+
 h1
   font:
     family: $titlefont
@@ -71,7 +76,7 @@ h2
     content: ""
     display: inline-block
     height:  1.5em
-    width:    84%
+    width:    90%
     vertical-align: baseline
     margin:
       right: -100%
@@ -98,6 +103,20 @@ p, li
   color: $ctext
   text-align: left
   position: relative
+
+p code
+  text-align: left
+  font:
+    family: monospace
+
+h3 code
+  @include sectionstyle(1.0em, 400, $subsectionfont)
+  font-style: italic
+  text-align: right
+  /*margin-left: 90%*/
+  position: absolute
+  right:    0%
+  color:   $cred
 
 #address
   font:
