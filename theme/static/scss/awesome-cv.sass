@@ -30,6 +30,7 @@ $titlefont:  "Roboto"
 $sectionfont: "Source Sans Pro"
 $subsectionfont: $sectionfont
 $subsubsectionfont: $sectionfont
+$bodyfont: $sectionfont
 
 @mixin  sectionstyle($size, $weight, $fontfamily)
   font:
@@ -58,14 +59,15 @@ h2
   &:after
     content: ""
     display: inline-block
-    height:  0.3em
+    height:  1.5em
     width:    84%
-    vertical-align: bottom
+    vertical-align: baseline
     margin:
       right: -100%
       left:  10px
     border:
-      top: 2px solid $ctext
+      bottom: 2px solid $ctext
+      
 h3 
   @include sectionstyle(1.2em, 700, $subsectionfont)
   margin-bottom: -0.5em
@@ -77,3 +79,12 @@ h5
   @include sectionstyle(1em, 400, $subsubsectionfont)
   margin-bottom: -1em
   font-variant: small-caps  
+p li 
+  font:
+    family: $bodyfont
+    weight: 400
+    size: 1em
+  color: $ctext
+  text-align: left
+  position: relative
+
