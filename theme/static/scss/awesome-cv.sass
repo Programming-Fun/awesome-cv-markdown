@@ -7,7 +7,8 @@ $clightgray: #999999
 /* basic colors */
 $cgreen:     #C2E15F
 $corange:    #FDA333
-$cred:       #D3A4F9
+$cred:       #FB4485
+$cpurple:    #D3A4F9
 $cblue:      #6CE0F1
 /* text colors */
 $cdarktext:   #414141
@@ -34,7 +35,7 @@ $bodyfont: $sectionfont
 
 @mixin  sectionstyle($size, $weight, $fontfamily)
   font:
-    family: $fontfamily
+    family: $fontfamily, sans
     weight: $weight
     size:   $size
   text-align: left
@@ -50,6 +51,14 @@ h1
   line-height: 1em
   position: relative
   margin-top: 2em
+  margin-bottom: 0em
+
+h1+p
+  color: $cred
+  text-align: center
+  position: relative
+  font-variant: small-caps
+  margin-top: 0em
 
 h2
   @include sectionstyle(1.5em, 700, $sectionfont)
@@ -79,9 +88,9 @@ h5
   @include sectionstyle(1em, 400, $subsubsectionfont)
   margin-bottom: -1em
   font-variant: small-caps  
-p li 
+p, li 
   font:
-    family: $bodyfont
+    family: $bodyfont, sans
     weight: 400
     size: 1em
   color: $ctext
