@@ -7,19 +7,22 @@
   <link href="test.css" type="text/css" rel="stylesheet" media="screen">
   <link href="cv-print.css" type="text/css" rel="stylesheet" media="print">
   <meta charset=utf-8 />
-  <title> Jochen Schröder's</title>
-
-  {% endblock %}
+  <title>{% block title %}{{page.title}} {% endblock title %}</title>
+  {% endblock head %}
 </head>
 
 <body>
   <div id="main">
-
       {% block content %}
+      <h1> {{ page.author }} </h1>
+      <p> {{ page.position }} </p>
+      <div id="address"> {{ page.address }} </div>
+      <div id="email"><a href="mailto:{{ page.email }}">{{ page.email }}</a> <div
+                         id="email">
     <div id="content">
     {{ page.content }}
     </div>
-    {% endblock %}
+    {% endblock content %}
   </div>
 
   <div class="footer"></div>
