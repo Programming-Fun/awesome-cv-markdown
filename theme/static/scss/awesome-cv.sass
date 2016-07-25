@@ -83,7 +83,10 @@ h2
       left:  10px
     border:
       bottom: 2px solid $ctext
-      
+
+.awesome-color
+  color: $awesome
+
 h2 code
   @include sectionstyle(1.0em, 700, $sectionfont)
   color: $awesome
@@ -125,6 +128,14 @@ h3 code
   position: absolute
   right:    0%
   color:   $awesome
+
+h4.publication-year
+  @include sectionstyle(1.2em, 400, $subsectionfont)
+  font-style: italic
+  text-align: left
+  margin-left: 2%
+  color:   $awesome
+   
 
 #address
   font:
