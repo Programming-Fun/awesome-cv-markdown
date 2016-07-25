@@ -23,23 +23,123 @@
     {{ page.content }}
     </div>
     {% endblock content %}
-    <h2 class="entry-title">Journal articles</h2>
-    {% for yeargroup in journal|groupby(1)|reverse %}
-    <h3> {{ yeargroup.grouper }} </h3>
-    <ul>
-    {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
-    <p>
-    <li id="{{ key }}">{{ text }}
-    <br />
-    [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-    {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
-    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
-    {% endfor %}  
-    </p>
-    </li>
-    {% endfor %}
-    </ul>
-    {% endfor %}
+
+    <h2 class="publications"><span
+        class="awesome-color">Pub</span>lications</h2>
+    {% if journal %}
+        <h3 class="publication-type">Journal articles</h3>
+        {% for yeargroup in journal|groupby(1)|reverse %}
+            <h4 class="publication-year"> {{ yeargroup.grouper }} </h4>
+            <ul>
+            {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+                <p>
+                <li id="{{ key }}">{{ text }}
+                <br />
+                [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                {% endfor %}  
+                </p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %}
+    {% if invited %}
+        <h3 class="publication-type">Invited talks</h3>
+        {% for yeargroup in invited|groupby(1)|reverse %}
+            <h4 class="publication-year"> {{ yeargroup.grouper }} </h4>
+            <ul>
+            {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+                <p>
+                <li id="{{ key }}">{{ text }}
+                <br />
+                [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                {% endfor %}  
+                </p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %} 
+    {% if conference %}
+        <h3 class="publication-type">Conference Contributions</h3>
+        {% for yeargroup in conference|groupby(1)|reverse %}
+            <h4 class="publication-year"> {{ yeargroup.grouper }} </h4>
+            <ul>
+            {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+                <p>
+                <li id="{{ key }}">{{ text }}
+                <br />
+                [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                {% endfor %}  
+                </p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %}
+    {% if patent %}
+        <h3 class="publication-type">Patents</h3>
+        {% for yeargroup in patent|groupby(1)|reverse %}
+            <h4 class="publication-year"> {{ yeargroup.grouper }} </h4>
+            <ul>
+            {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+                <p>
+                <li id="{{ key }}">{{ text }}
+                <br />
+                [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                {% endfor %}  
+                </p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %} 
+    {% if book_chapter %}
+        <h3 class="publication-type">Book Chapters</h3>
+        {% for yeargroup in book_chapter|groupby(1)|reverse %}
+            <h4 class="publication-year"> {{ yeargroup.grouper }} </h4>
+            <ul>
+            {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+                <p>
+                <li id="{{ key }}">{{ text }}
+                <br />
+                [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                {% endfor %}  
+                </p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %} 
+    {% if book %}
+        <h3 class="publication-type">Books</h3>
+        {% for yeargroup in book|groupby(1)|reverse %}
+            <h4 class="publication-year"> {{ yeargroup.grouper }} </h4>
+            <ul>
+            {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+                <p>
+                <li id="{{ key }}">{{ text }}
+                <br />
+                [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                {% endfor %}  
+                </p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %} 
   </div>
 
   <div class="footer"></div>
