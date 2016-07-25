@@ -23,6 +23,23 @@
     {{ page.content }}
     </div>
     {% endblock content %}
+    <h2 class="entry-title">Journal articles</h2>
+    {% for yeargroup in journal|groupby(1)|reverse %}
+    <h3> {{ yeargroup.grouper }} </h3>
+    <ul>
+    {% for key, year, text, bibtex, pdf, slides, poster in yeargroup.list %}
+    <p>
+    <li id="{{ key }}">{{ text }}
+    <br />
+    [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
+    {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+    {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+    {% endfor %}  
+    </p>
+    </li>
+    {% endfor %}
+    </ul>
+    {% endfor %}
   </div>
 
   <div class="footer"></div>
