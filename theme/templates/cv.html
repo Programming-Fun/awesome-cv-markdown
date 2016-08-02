@@ -19,14 +19,30 @@
       <p> {{ page.position }} </p>
       <div id="address"> {{ page.address }} </div>
       <div id="webaddress">
-        <i class="fa fa-phone" style="font-size:12px;"></i>
-        +61 (02) 9925 2549
-         | <i class="fa fa-envelope" style="font-size:12px;"></i> 
-        <a href="mailto:{{ page.email }}">{{ page.email }}</a> 
-         | <i class="fa fa-home" style="font-size:12px;"></i> 
-        <a href="http://{{ page.website }}">{{ page.website }}</a> 
-        <i class="fa fa-github" style="font-size:12px;"></i> 
-        <a href="http://github.com/{{ page.github }}">{{ page.github }}</a>  
+        {% if page.phone %}
+            <i class="fa fa-phone" style="font-size:12px;"></i>
+            {{ page.phone }}
+        {% endif %}
+        {% if page.email %}
+            | <i class="fa fa-envelope" style="font-size:12px;"></i> 
+            <a href="mailto:{{ page.email }}">{{ page.email }}</a> 
+        {% endif %}
+        {% if page.website %}
+            | <i class="fa fa-home" style="font-size:12px;"></i> 
+            <a href="http://{{ page.website }}">{{ page.website }}</a> 
+        {% endif %}
+        {% if page.github %}
+            | <i class="fa fa-github" style="font-size:12px;"></i> 
+            <a href="http://github.com/{{ page.github }}">{{ page.github }}</a>  
+        {% endif %}
+        {% if page.gitlab %}
+            | <i class="fa fa-gitlab" style="font-size:12px;"></i> 
+            <a href="http://gitlab.com/u/{{ page.gitlab }}">{{ page.gitlab }}</a>  
+        {% endif %} 
+        {% if page.linkedin %}
+            | <i class="fa fa-linkedin" style="font-size:12px;"></i> 
+            <a href="http://linkedin.com/in/{{ page.linkedin }}">{{ page.linkedin }}</a>  
+        {% endif %} 
       </div>
     <div id="content">
     {{ page.content }}
