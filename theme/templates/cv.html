@@ -3,15 +3,27 @@
 <head>
     {% block head %}
   <!-- imports -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700|Oswald:400,300,700|Roboto+Condensed:400,300,700|Source+Sans+Pro:400,300,600,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
- <link href="test.css" type="text/css" rel="stylesheet" >
-  <meta charset=utf-8 />
-  <title>{% block title %}{{page.title}} {% endblock title %}</title>
-  {% endblock head %}
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700|Oswald:400,300,700|Roboto+Condensed:400,300,700|Source+Sans+Pro:400,300,600,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="test.css" type="text/css" rel="stylesheet" >
+    <meta charset=utf-8 />
+    <title>{% block title %}{{page.title}} {% endblock title %}</title>
+    <script type="text/javascript">
+        function disp(s) {
+            var win;
+            var doc;
+            win = window.open("", "WINDOWID");
+            doc = win.document;
+            doc.open("text/html");
+            doc.write("<pre>" + s + "</pre>");
+            doc.close();
+        }
+    </script>        
+    {% endblock head %}
 </head>
 
 <body>
+
   <div id="main">
       {% block content %}
       <h1> {{ page.author }} </h1>
@@ -59,10 +71,12 @@
                 <p>
                 <li id="{{ key }}">{{ text }}
                 <br />
+                <div class='noprint'>
                 [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                {% for label, target in [('URL', url), ('DOI', doi), ('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
                     {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
                 {% endfor %}  
+                </div>
                 </p>
                 </li>
             {% endfor %}
@@ -78,10 +92,12 @@
                 <p>
                 <li id="{{ key }}">{{ text }}
                 <br />
+                <div class='noprint'>
                 [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                {% for label, target in [('URL', url), ('DOI', doi), ('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
                     {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
                 {% endfor %}  
+                </div>
                 </p>
                 </li>
             {% endfor %}
@@ -97,10 +113,12 @@
                 <p>
                 <li id="{{ key }}">{{ text }}
                 <br />
+                <div class='noprint'>
                 [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                {% for label, target in [('URL', url), ('DOI', doi), ('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
                     {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
                 {% endfor %}  
+                </div>
                 </p>
                 </li>
             {% endfor %}
@@ -116,9 +134,11 @@
                 <p>
                 <li id="{{ key }}">{{ text }}
                 <br />
+                <div class='noprint'>
                 [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                {% for label, target in [('URL', url), ('DOI', doi), ('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
                     {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
+                </div>
                 {% endfor %}  
                 </p>
                 </li>
@@ -135,10 +155,12 @@
                 <p>
                 <li id="{{ key }}">{{ text }}
                 <br />
+                <div class='noprint'>
                 [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                {% for label, target in [('URL', url), ('DOI', doi), ('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
                     {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
                 {% endfor %}  
+                </div>
                 </p>
                 </li>
             {% endfor %}
@@ -154,10 +176,12 @@
                 <p>
                 <li id="{{ key }}">{{ text }}
                 <br />
+                <div class='noprint'>
                 [&nbsp;<a href="javascript:disp('{{ bibtex|replace('\n', '\\n')|escape|forceescape }}');">Bibtex</a>&nbsp;]
-                {% for label, target in [('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
+                {% for label, target in [('URL', url), ('DOI', doi), ('PDF', pdf), ('Slides', slides), ('Poster', poster)] %}
                     {{ "[&nbsp;<a href=\"%s\">%s</a>&nbsp;]" % (target, label) if target }}
                 {% endfor %}  
+                </div>
                 </p>
                 </li>
             {% endfor %}
