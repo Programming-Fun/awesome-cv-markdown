@@ -35,6 +35,6 @@ DEFAULT_DATE = 'fs'
 DISPLAY_PAGES_ON_MENU = True
 THEME = 'theme/'
 PLUGIN_PATHS= ['plugins/', '/home/jschrod/Downloads/Python/pelican-plugins/']
-PLUGINS = ['pelican-bibtex', 'assets']
+PLUGINS = ['pelican-bibtex', 'assets', 'render_math']
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
