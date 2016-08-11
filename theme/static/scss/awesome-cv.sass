@@ -55,8 +55,9 @@ h1
   text-align: center
   line-height: 1em
   position: relative
-  margin-top: 2em
-  margin-bottom: 0em
+  margin:
+    top: 0em
+    bottom: 0em
 
 h1+p
   color: $awesome
@@ -71,7 +72,9 @@ h2
   @include sectionstyle(1.5em, 700, $sectionfont)
   color: $ctext
   overflow: hidden
-  margin-bottom: -0.3em
+  margin: 
+    top: 1em
+    bottom: 1em
   &:after
     content: ""
     display: inline-block
@@ -91,41 +94,22 @@ h2 code
   @include sectionstyle(1.0em, 700, $sectionfont)
   color: $awesome
   overflow: hidden
-  margin-bottom: -0.3em 
+  /*margin:
+    bottom: 0em
+    top: 0em */
 
 h3 
   @include sectionstyle(1.2em, 700, $subsectionfont)
-  margin-bottom: -0.5em
+  margin:
+    top: 1em
+    bottom: 0em
 
 h3+p
   @include sectionstyle(1em, 400, $subsubsectionfont)
-  margin-bottom: -1em
-  margin-top: 0.5em
+  margin:
+    bottom: 0em
+    top: 0em
   font-variant: small-caps   
-
-h4 
-  @include sectionstyle(1.2em, 600, $subsectionfont)
-  margin-bottom: -0.5em
-  font-variant: small-caps
-h5 
-  @include sectionstyle(1em, 400, $subsubsectionfont)
-  margin-bottom: -1em
-  margin-top: 0.5em
-  font-variant: small-caps  
-p, li 
-  font:
-    family: $bodyfont, sans
-    weight: 400
-    size: 1em
-  color: $ctext
-  text-align: left
-  position: relative
-
-p code
-  text-align: left
-  color: $clighttext
-  font:
-    family: $bodyfont, sans
 
 h3 code
   @include sectionstyle(1.0em, 400, $subsectionfont)
@@ -135,6 +119,39 @@ h3 code
   position: absolute
   right:    0%
   color:   $awesome
+ 
+h4 
+  @include sectionstyle(1.2em, 600, $subsectionfont)
+  font-variant: small-caps
+  margin:
+    bottom: 0em
+    top: 0em
+
+h5 
+  @include sectionstyle(1em, 400, $subsubsectionfont)
+  font-variant: small-caps  
+  margin:
+    bottom: 0em
+    top: 0em
+
+p, li 
+  font:
+    family: $bodyfont, sans
+    weight: 400
+    size: 1em
+  color: $ctext
+  text-align: left
+  position: relative
+  margin:
+    top: 0em
+    bottom: 0em
+
+p code
+  text-align: left
+  color: $clighttext
+  font:
+    family: $bodyfont, sans
+
 
 h4.publication-year
   @include sectionstyle(1.2em, 400, $subsectionfont)
@@ -171,6 +188,11 @@ h4.publication-year
 
 li
   page-break-inside: avoid
+
+ul
+  margin:
+    top: 0em
+    bottom: 0em
 
 a
   @media print
