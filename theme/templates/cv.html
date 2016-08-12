@@ -44,6 +44,10 @@
             | <i class="fa fa-gitlab" style="font-size:12px;"></i> 
             <a href="http://gitlab.com/u/{{ page.gitlab }}">{{ page.gitlab }}</a>  
         {% endif %} 
+        {% if page.twitter %}
+            | <i class="fa fa-twitter" style="font-size:12px;"></i> 
+            {{ page.twitter }}
+        {% endif %}  
         {% if page.linkedin %}
             | <i class="fa fa-linkedin" style="font-size:12px;"></i> 
             <a href="http://linkedin.com/in/{{ page.linkedin }}">{{ page.linkedin }}</a>  
