@@ -18,3 +18,4 @@ Requirements
 * If you want to integrate counts of publications into your content use the `pelican-jinja2content` plugin
 
 
+This project only contains the templates and style files to generate the CV, no other pelican theme files are included. 
