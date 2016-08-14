@@ -10,6 +10,8 @@ mobile: +61 (0)222 222 222
 github: testing
 twitter: @test
 website: www.example.com
+journal_src: content/journals.bib
+conference_src: content/conferences.bib
 ---
 
 
