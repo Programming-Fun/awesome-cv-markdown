@@ -1,3 +1,6 @@
 [submodule "plugins/pelican-perpagepublications"]
 	path = plugins/pelican-perpagepublications
 	url = git@github.com:cycomanic/pelican-perpagepublications.git
+[submodule "pelican-plugins"]
+	path = pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins.git
