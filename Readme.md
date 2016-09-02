@@ -14,7 +14,7 @@ Requirements
 
 * [Pelican](https://github.com/getpelican/pelican) with the `assests` plugin
 * For rendering math formulas use the `render_math` pelican plugin
-* If you want to have a publication list generated you will have to use my fork of `pelican-bibtex` called [`pelican-perpagepublications`](https://github.com/cycomanic/pelican-perpublications) 
+* If you want to have a publication list generated you will have to use my fork of `pelican-bibtex` called [`pelican-perpagepublications`]( https://github.com/cycomanic/pelican-perpagepublications)
 * If you want to integrate counts of publications into your content use the `pelican-jinja2content` plugin
 
 
